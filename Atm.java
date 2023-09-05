@@ -43,15 +43,15 @@ import java.util.Scanner;
 
 class Atm
  {
-    static Account a=new Account();
+        static Account a=new Account();
 	static Scanner sc=new Scanner(System.in);
 	public void withdraw()
 	{
-      System.out.println("enter acctno");
-	  long acctno=sc.nextLong();
-	  if(a.getAcctNumber()==acctno)
-	  {
-        System.out.println("enter pswd");
+            System.out.println("enter acctno");
+	    long acctno=sc.nextLong();
+	   if(a.getAcctNumber()==acctno)
+	     {
+                System.out.println("enter pswd");
 		int pswd=sc.nextInt();
 		if(a.getPswd()==pswd)
 		{
@@ -59,7 +59,7 @@ class Atm
 			double mon=sc.nextDouble();
 			if(a.getBalance()>=mon)
 			{
-               double dc=a.getBalance()-mon;
+                           double dc=a.getBalance()-mon;
 			   a.setBalance(dc);
 			}
 			else
@@ -82,13 +82,14 @@ class Atm
 		System.out.print("Enter money to be deposited : ");
 		double cash=sc.nextDouble();
 		double amount=a.getBalance()+cash;
-        a.setBalance(amount);
+                a.setBalance(amount);
 		System.out.println("Your Money has been successfully deposited");
 
 	}
 	public void checkBalance()
 	{
-     System.out.println("Balance : "+a.getBalance());
+		System.out.print("Balance : ");
+            System.out.println(a.getBalance());
 	}
 	public static void main(String[]args)
 	{
@@ -102,20 +103,20 @@ class Atm
 			System.out.println("4.Exit");
 			System.out.print("Choose the operation : ");
 			System.out.println("");
-           switch(sc.nextInt())
-		   {
+                   switch(sc.nextInt())
+		       {
 			   case 1:
 				   a1.withdraw();
 			   break;
 			   case 2:
-                  a1.deposit();
+                                  a1.deposit();
 			   break;
 			   case 3:
 				   a1.checkBalance();
 			   break;
 			   case 4:
 				   System.exit(1);
-		   }
+		       }
 		}
 	}
  }
